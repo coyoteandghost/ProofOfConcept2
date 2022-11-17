@@ -14,15 +14,17 @@ public class PictureBehavior : MonoBehaviour
 
         webcam = new WebCamTexture();
         GetComponent<Renderer>().material.mainTexture = webcam;
-        webcam.Play();
-    }
-    void Cheese() 
-    {
-        webcam.Pause();
+        StartCoroutine(Cheese());
     }
 
     private void OnDestroy()
     {
         webcam.Stop();
+    }
+    IEnumerator Cheese()
+    {
+        webcam.Play();
+        yield return new WaitForSeconds(1);
+        webcam.Pause();
     }
 }
