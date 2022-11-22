@@ -11,7 +11,17 @@ using UnityEngine;
 
 public class cameraKern : MonoBehaviour
 {
+    public Transform endPosition = null;
+
     bool canInteract = false;
+    bool buttonsActive = false;
+
+    public GameObject food;
+    public GameObject sleep;
+    public GameObject hygiene;
+    public GameObject game;
+
+
     void Start()
     {
         
@@ -26,7 +36,33 @@ public class cameraKern : MonoBehaviour
                 canInteract = true;
             }
         }
-        Debug.Log(canInteract);
+        //Debug.Log(canInteract);
+
+        if (canInteract)
+        {
+            transform.position = Vector3.Lerp(transform.position, endPosition.position, Time.deltaTime*3);
+            buttonsActive = true;
+        }
+
+        if (buttonsActive)
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                food.SetActive(true);
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                game.SetActive(true);
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                hygiene.SetActive(true);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                sleep.SetActive(true);
+            }
+        }
 
 
     }
