@@ -911,11 +911,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86dcc20346d248a4cbe43adfc7aa3ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPosition: {fileID: 0}
-  food: {fileID: 0}
-  sleep: {fileID: 0}
-  hygiene: {fileID: 0}
-  game: {fileID: 0}
+  endPosition: {fileID: 1024790475}
+  food: {fileID: 795479440}
+  sleep: {fileID: 193358072}
+  hygiene: {fileID: 556659828}
+  game: {fileID: 1424807501}
 --- !u!1 &2054437789
 GameObject:
   m_ObjectHideFlags: 0
