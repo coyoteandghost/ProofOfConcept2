@@ -12,8 +12,11 @@ public class playerMove : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+    public GameObject ceilingCheck;
+
     Vector3 currentVelocity;
     bool isGrounded;
+    bool isCeilingCollided = false;
     public float grav;
     public float weight;
 
@@ -26,10 +29,16 @@ public class playerMove : MonoBehaviour
             currentVelocity.y = -2f;
         }
 
+        if (!isGrounded && ceilingCheck)
+        {
+            //trying to make it so that if player is NOT grounded and the ceilingCheck is colliding, it comes down faster.
+            //"hitting" its head and gravity increases. then resets when you're grounded again
+        }
+
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x + transform.forward * z; //controlling the movement in the forward and side to side
+        Vector3 move = transform.right * x + transform.forward * 0; //controlling the movement in the forward and side to side
         controllerP.Move(move * speed * Time.deltaTime); //take the movement formula and apply it to character with respect to time and speed
 
         if(Input.GetButtonDown("Jump") && isGrounded)
