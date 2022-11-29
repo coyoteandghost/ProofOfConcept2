@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene_Testing.unity
+    path: Assets/Scenes/part2.unity
     guid: a71f9572163821840af6a2fc11fe44f2
   - enabled: 1
     path: Assets/Scenes/tomagotchi.unity

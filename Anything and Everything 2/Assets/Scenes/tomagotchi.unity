@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.037011836, g: 0.029009206, b: 0.01708829, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 441124780}
   - component: {fileID: 441124779}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: backdrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,8 +413,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441124778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -1.6157}
-  m_LocalScale: {x: 20.32, y: 11.47, z: 0.31250316}
+  m_LocalPosition: {x: -0, y: 2.6594, z: -5.91}
+  m_LocalScale: {x: 20.32, y: 16.788641, z: 0.31250316}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -538,14 +538,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590829189}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: -0.10843897, y: -0.14277874, z: 0.23939067, w: 0.9542261}
+  m_LocalPosition: {x: 0, y: 2.77, z: -3.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: -7.966, y: -19.121, z: 29.511}
 --- !u!1 &795479440
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,28 +894,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9038da320ecf11e498eee295f65fb457, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c553556f1a60c32438d6ed02cc1a5d9a, type: 3}
---- !u!1 &1966960457 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c553556f1a60c32438d6ed02cc1a5d9a, type: 3}
-  m_PrefabInstance: {fileID: 1966960456}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1966960458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1966960457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86dcc20346d248a4cbe43adfc7aa3ace, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endPosition: {fileID: 1024790475}
-  food: {fileID: 795479440}
-  sleep: {fileID: 193358072}
-  hygiene: {fileID: 556659828}
-  game: {fileID: 1424807501}
 --- !u!1 &2054437789
 GameObject:
   m_ObjectHideFlags: 0
