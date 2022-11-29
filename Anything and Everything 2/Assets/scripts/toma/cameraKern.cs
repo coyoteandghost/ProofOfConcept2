@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class cameraKern : MonoBehaviour
 {
     public Transform endPosition = null;
+    public ParticleSystem particleSystem;
 
     bool canInteract = false;
     bool buttonsActive;
@@ -50,9 +51,10 @@ public class cameraKern : MonoBehaviour
         buttonsActive = true;
         if (buttonsActive)
         {
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W))
             {
-                food.SetActive(true);
+                particleSystem.Play();
+                //food.SetActive(true); //UPDATE BOOL YAY
             }
             if (Input.GetKey(KeyCode.A))
             {

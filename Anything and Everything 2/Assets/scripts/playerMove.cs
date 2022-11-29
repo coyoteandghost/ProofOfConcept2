@@ -48,7 +48,12 @@ public class playerMove : MonoBehaviour
 
         //adding gravity downwards!
         currentVelocity.y += grav * Time.deltaTime * weight;
-        controllerP.Move(currentVelocity * Time.deltaTime);
+
+        var flags = controllerP.Move(currentVelocity * Time.deltaTime); //tells where it collides with things
+        if ((flags & CollisionFlags.Above)!=0)
+        {
+            currentVelocity.y = 0;
+        }
 
         Debug.Log(isGrounded);
     }
