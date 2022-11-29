@@ -671,8 +671,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
-  ceilingCheck: {fileID: 0}
-  grav: -10
+  grav: -9.8
   weight: 1.6
 --- !u!143 &1807834960
 CharacterController:

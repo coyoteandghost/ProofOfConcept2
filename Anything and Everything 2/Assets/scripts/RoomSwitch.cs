@@ -6,11 +6,17 @@ using UnityEngine.SceneManagement;
 public class RoomSwitch : MonoBehaviour
 {
     public static RoomSwitch Instance;
+    public Collider col;
     public bool switchCaseReached = false; //this bool must be set true in the room's script when microgame is fin.
 
     private void Awake()
     {
         Instance = this; 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        switchCaseReached = true;
     }
 
     private void Update()
