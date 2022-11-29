@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class neighbor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         
     }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        AudioSource scream = gameObject.GetComponent<AudioSource>();
+        scream.Play();
+    }
+
 }
