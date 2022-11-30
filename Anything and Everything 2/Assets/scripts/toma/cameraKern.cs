@@ -10,7 +10,13 @@ using UnityEngine.SceneManagement;
 public class cameraKern : MonoBehaviour
 {
     public Transform endPosition = null;
-    public ParticleSystem particleSystem;
+
+    [Header("Particle Systems")]
+    public ParticleSystem foodParticleSystem;
+    public ParticleSystem sleepParticleSystem;
+    public ParticleSystem hygieneParticleSystem;
+    public ParticleSystem gameParticleSystem;
+
 
     bool canInteract = false;
     bool buttonsActive;
@@ -53,20 +59,24 @@ public class cameraKern : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
-                particleSystem.Play();
+                foodParticleSystem.Play();
                 //food.SetActive(true); //UPDATE BOOL YAY
             }
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A))
             {
-                game.SetActive(true);
+                //game.SetActive(true);
+                gameParticleSystem.Play();
             }
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.S))
             {
-                hygiene.SetActive(true);
+                //hygiene.SetActive(true);
+                hygieneParticleSystem.Play();
+
             }
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.D))
             {
-                sleep.SetActive(true);
+                //sleep.SetActive(true);
+                sleepParticleSystem.Play();
             }
         }
         if (allStatsActive)
