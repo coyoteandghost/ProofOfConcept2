@@ -21,10 +21,15 @@ public class cameraKern : MonoBehaviour
     bool canInteract = false;
     bool buttonsActive;
 
-    public GameObject food;
+    /*public GameObject food;
     public GameObject sleep;
     public GameObject hygiene;
-    public GameObject game;
+    public GameObject game;*/
+
+    private int foodPressed = 0;
+    private int sleepPressed = 0;
+    private int hygienePressed = 0;
+    private int gamePressed = 0;
 
     private bool allStatsActive = false; //whether or not all the 4 stats are active
 
@@ -44,10 +49,16 @@ public class cameraKern : MonoBehaviour
             StartCoroutine(ButtonCoroutine());
         }
 
-        if (food.activeSelf && game.activeSelf && hygiene.activeSelf && sleep.activeSelf)
+        /*if (food.activeSelf && game.activeSelf && hygiene.activeSelf && sleep.activeSelf)
+        {
+            allStatsActive = true;
+        }*/
+
+        if (foodPressed > 3 && sleepPressed > 3 && hygienePressed > 3 && gamePressed > 3)
         {
             allStatsActive = true;
         }
+        Debug.Log(foodPressed);
     }
 
     IEnumerator ButtonCoroutine()
@@ -57,26 +68,28 @@ public class cameraKern : MonoBehaviour
         buttonsActive = true;
         if (buttonsActive)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W)) //FOOD
             {
                 foodParticleSystem.Play();
-                //food.SetActive(true); //UPDATE BOOL YAY
+                foodPressed += 1;
             }
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A))//GAME
             {
-                //game.SetActive(true);
                 gameParticleSystem.Play();
+                gamePressed += 1;
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.S))//HYGIENE
             {
                 //hygiene.SetActive(true);
                 hygieneParticleSystem.Play();
+                hygienePressed += 1;
 
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.D))//SLEEP
             {
                 //sleep.SetActive(true);
                 sleepParticleSystem.Play();
+                sleepPressed += 1;
             }
         }
         if (allStatsActive)
