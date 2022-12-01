@@ -11,29 +11,36 @@ public class playerMove : MonoBehaviour
     public Transform groundCheck; // spherecheck for grav reset
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-
-    public GameObject ceilingCheck;
+    public LayerMask bounceMask;
 
     Vector3 currentVelocity;
     bool isGrounded;
-    bool isCeilingCollided = false;
+    bool isBounced;
     public float grav;
     public float weight;
+
+    public bool bounceCollision = false;
 
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // creates invisible sphere w position, radius, and layer to check for collision
 
-        if (isGrounded && currentVelocity.y < 0) //if grounded, reset velocity
+        if (isGrounded) //if grounded, reset velocity
         {
-            currentVelocity.y = -2f;
-        }
+            if (isBounced)
+            {
 
-        if (!isGrounded && ceilingCheck)
-        {
-            //trying to make it so that if player is NOT grounded and the ceilingCheck is colliding, it comes down faster.
-            //"hitting" its head and gravity increases. then resets when you're grounded again
+            }
+            else if (currentVelocity.y < 0)
+            {
+                currentVelocity.y = -2f;
+            }
+
+
+
+            
         }
+        //if (isBounced && )
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -57,6 +64,15 @@ public class playerMove : MonoBehaviour
 
         Debug.Log(isGrounded);
     }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "bounce")
+        {
+            isBounced = true;
+        }
+    }
+    
 
 
 }

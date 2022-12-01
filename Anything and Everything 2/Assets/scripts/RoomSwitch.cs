@@ -9,6 +9,8 @@ public class RoomSwitch : MonoBehaviour
     public Collider col;
     public bool switchCaseReached = false; //this bool must be set true in the room's script when microgame is fin.
 
+    //private string currentScene = SceneManager.GetActiveScene().buildIndex;
+
     private void Awake()
     {
         Instance = this; 
@@ -26,9 +28,12 @@ public class RoomSwitch : MonoBehaviour
             Switch();
         }
 
-        if (Input.GetKeyDown(KeyCode.R)) //press r to reset
+        if (Input.GetKeyDown(KeyCode.R)) //press r to reset current room
         {
-            SceneManager.LoadScene(0);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene());
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
+            //SceneManager.LoadScene(0);
         }
     }
 
