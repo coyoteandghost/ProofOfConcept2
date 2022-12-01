@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MilesTestingScene.unity
-    guid: 6afb228b57366ee4694cf32b17dc7490
+    path: Assets/Scenes/part1.unity
+    guid: a71f9572163821840af6a2fc11fe44f2
   - enabled: 1
     path: Assets/Scenes/tomagotchi.unity
     guid: d0252192714713a4fb0f9957984f36e9
+  - enabled: 1
+    path: Assets/Scenes/part2.unity
+    guid: f54218c0a983ab04fa27dac7f7b01baa
+  - enabled: 1
+    path: Assets/Scenes/MilesTestingScene.unity
+    guid: 6afb228b57366ee4694cf32b17dc7490
   m_configObjects: {}
