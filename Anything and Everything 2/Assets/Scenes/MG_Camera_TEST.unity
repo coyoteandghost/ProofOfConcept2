@@ -150,7 +150,7 @@ MonoBehaviour:
   photo: {fileID: 341920409}
   shutterSound: {fileID: 197788241}
   screenFlash: {fileID: 456997683}
-  sceneToLoad: 0
+  sceneToLoad: 4
 --- !u!82 &197788241
 AudioSource:
   m_ObjectHideFlags: 0

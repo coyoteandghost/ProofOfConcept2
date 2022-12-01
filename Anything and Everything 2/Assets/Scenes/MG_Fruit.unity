@@ -527,7 +527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blend_noise: {fileID: 351332752}
   fruitLeft: 5
-  sceneToLoad: 0
+  sceneToLoad: 6
 --- !u!1 &748180068
 GameObject:
   m_ObjectHideFlags: 0
