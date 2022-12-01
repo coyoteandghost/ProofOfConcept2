@@ -7,39 +7,38 @@ public class playerMove : MonoBehaviour
     public CharacterController controllerP;
     public float speed;
     public float jumpHeight = 3f;
+    public float drag;
 
     public Transform groundCheck; // spherecheck for grav reset
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-
-    public GameObject ceilingCheck;
+    public LayerMask bounceMask;
 
     Vector3 currentVelocity;
     bool isGrounded;
-    bool isCeilingCollided = false;
+    bool isBounced;
     public float grav;
     public float weight;
 
+    public bool bounceCollision = false;
+
     void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // creates invisible sphere w position, radius, and layer to check for collision
+        currentVelocity.z = 0;
 
-        if (isGrounded && currentVelocity.y < 0) //if grounded, reset velocity
+        // creates invisible sphere w position, radius, and layer to check for collision
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); 
+
+        if (isGrounded && currentVelocity.y <0) //if grounded, reset velocity
         {
             currentVelocity.y = -2f;
-        }
-
-        if (!isGrounded && ceilingCheck)
-        {
-            //trying to make it so that if player is NOT grounded and the ceilingCheck is colliding, it comes down faster.
-            //"hitting" its head and gravity increases. then resets when you're grounded again
         }
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * 0; //controlling the movement in the forward and side to side
-        controllerP.Move(move * speed * Time.deltaTime); //take the movement formula and apply it to character with respect to time and speed
+        //controllerP.Move(move * speed * Time.deltaTime); //take the movement formula and apply it to character with respect to time and speed
 
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -49,13 +48,26 @@ public class playerMove : MonoBehaviour
         //adding gravity downwards!
         currentVelocity.y += grav * Time.deltaTime * weight;
 
-        var flags = controllerP.Move(currentVelocity * Time.deltaTime); //tells where it collides with things
+        var flags = controllerP.Move((currentVelocity + move*speed )* Time.deltaTime); //tells where it collides with things
         if ((flags & CollisionFlags.Above)!=0)
         {
             currentVelocity.y = 0;
         }
+        /*if ((flags & CollisionFlags.Below) != 0)
+        {
+            currentVelocity.y = -currentVelocity.y;
+        }*/
 
-        Debug.Log(isGrounded);
+        currentVelocity.x *= Mathf.Clamp01(1f - drag * Time.deltaTime);
+
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.collider.sharedMaterial.bounciness > 0)
+        {
+            currentVelocity = Vector3.Reflect(currentVelocity, hit.normal) * hit.collider.sharedMaterial.bounciness;
+        }
     }
 
 
