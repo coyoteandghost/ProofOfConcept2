@@ -38,7 +38,7 @@ public class RoomSwitch : MonoBehaviour
     }
 
 
-    void Switch()
+    public void Switch()
     {
 
         int sceneToLoad = SceneManager.GetActiveScene().buildIndex + 1; //move to next scene

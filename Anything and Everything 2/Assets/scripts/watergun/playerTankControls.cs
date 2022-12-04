@@ -11,7 +11,8 @@ public class playerTankControls : MonoBehaviour
     float xRotation = 0f;
     float yRotation = 0f;
     public Transform playerBody;
-
+    public AudioSource shoot;
+    public int ratAttack;
 
     //----------------------------------
     public ParticleSystem waterPS;
@@ -19,6 +20,11 @@ public class playerTankControls : MonoBehaviour
 
     void Update()
     {
+
+        if(ratAttack > 3)
+        {
+            GetComponent<RoomSwitch>().switchCaseReached = true;
+        }
 
         float xInput = Input.GetAxis("Horizontal");
         float yInput = Input.GetAxis("Vertical");
@@ -37,6 +43,7 @@ public class playerTankControls : MonoBehaviour
             {
                 shot = true;
                 waterPS.Emit(20);
+                shoot.Play();
                 StartCoroutine(Timer());
             }
         }
