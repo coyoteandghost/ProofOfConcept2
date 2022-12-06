@@ -30,10 +30,8 @@ public class RoomSwitch : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R)) //press r to reset current room
         {
-            //SceneManager.LoadScene(SceneManager.GetActiveScene());
             Scene currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.name);
-            //SceneManager.LoadScene(0);
         }
     }
 
