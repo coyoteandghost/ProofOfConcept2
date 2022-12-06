@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.WSA;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class scr_Camera : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class scr_Camera : MonoBehaviour
     public Transform this_obj;
 
     public GameObject photo;
+
+    public GameObject arrow_image;
 
     public AudioSource shutterSound;
 
@@ -40,6 +43,7 @@ public class scr_Camera : MonoBehaviour
             float rot = this_obj.transform.rotation.eulerAngles.y;
             if (rot >= 0 && rot <= 2)
             {
+                arrow_image.SetActive(true);
                 if(input.y < 0)
                 {
                     shutterSound.Play();
@@ -48,6 +52,8 @@ public class scr_Camera : MonoBehaviour
                     picTaken = true;
                 }
             }
+            else
+                    arrow_image.SetActive(false);
         }
         if(picTaken == true)
             StartCoroutine(NextScene());

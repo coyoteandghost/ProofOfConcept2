@@ -2275,7 +2275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4574124760409694, guid: cd74bf6cea4234840b01646a5b3f339a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.04
+      value: 22.53
       objectReference: {fileID: 0}
     - target: {fileID: 4574124760409694, guid: cd74bf6cea4234840b01646a5b3f339a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4739,14 +4739,18 @@ MonoBehaviour:
   controllerP: {fileID: 1807834960}
   speed: 9.49
   jumpHeight: 10.05
+  drag: 0
   groundCheck: {fileID: 94512209}
   groundDistance: 0.5
   groundMask:
     serializedVersion: 2
     m_Bits: 8
-  ceilingCheck: {fileID: 1926920292}
+  bounceMask:
+    serializedVersion: 2
+    m_Bits: 0
   grav: -10
   weight: 3.74
+  bounceCollision: 0
 --- !u!143 &1807834960
 CharacterController:
   m_ObjectHideFlags: 0

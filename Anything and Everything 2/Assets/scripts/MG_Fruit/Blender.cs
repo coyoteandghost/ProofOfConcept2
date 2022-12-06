@@ -7,9 +7,13 @@ public class Blender : MonoBehaviour
 {
     public AudioSource blend_noise;
     public float fruitLeft;
+    public ParticleSystem fruitSplat;
     [SerializeField]
     int sceneToLoad;
-
+    private void Start()
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {
@@ -23,6 +27,7 @@ public class Blender : MonoBehaviour
         if(other.tag == "Fruit")
         {
             blend_noise.Play();
+            fruitSplat.Emit(10);
             fruitLeft -= 1;
         }
     }
