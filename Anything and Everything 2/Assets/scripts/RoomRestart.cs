@@ -13,7 +13,11 @@ public class RoomRestart : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.name);
+        if (col.gameObject.tag == "Player")
+        {
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
+        }
+        
     }
 }

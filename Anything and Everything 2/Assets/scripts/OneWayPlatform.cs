@@ -22,7 +22,7 @@ public class OneWayPlatform : MonoBehaviour
             col.enabled = false;
         }
 
-        Debug.Log(player.position.y + "," + (col.bounds.max).y);
+        //Debug.Log(player.position.y + "," + (col.bounds.max).y);
     
     }
 }

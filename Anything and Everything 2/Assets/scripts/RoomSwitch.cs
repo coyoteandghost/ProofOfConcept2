@@ -18,7 +18,11 @@ public class RoomSwitch : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        switchCaseReached = true;
+        if (other.gameObject.tag == "Player")
+        {
+            switchCaseReached = true;
+
+        }
     }
 
     private void Update()
