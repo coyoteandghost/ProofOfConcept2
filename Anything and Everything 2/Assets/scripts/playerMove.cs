@@ -22,6 +22,9 @@ public class playerMove : MonoBehaviour
 
     public bool bounceCollision = false;
 
+    public Animator playerAnim;
+    public SpriteRenderer playerSpr;
+
     void Update()
     {
         currentVelocity.z = 0;
@@ -29,21 +32,67 @@ public class playerMove : MonoBehaviour
         // creates invisible sphere w position, radius, and layer to check for collision
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); 
 
-        if (isGrounded && currentVelocity.y <0) //if grounded, reset velocity
+
+        if (isGrounded && currentVelocity.y < 0) //if grounded, reset velocity
         {
             currentVelocity.y = -2f;
+            
         }
+
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
+
         Vector3 move = transform.right * x + transform.forward * 0; //controlling the movement in the forward and side to side
         //controllerP.Move(move * speed * Time.deltaTime); //take the movement formula and apply it to character with respect to time and speed
+
 
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
             currentVelocity.y = Mathf.Sqrt(jumpHeight * -2f * grav);
+            playerAnim.SetBool("jumping", true);
+            playerAnim.SetBool("idle", false);
+            playerAnim.SetBool("walking", false);
         }
+
+
+        if (!isGrounded)
+        {
+            if(currentVelocity.y <= 0)
+            {
+                playerAnim.SetBool("jumping", false);                
+            }
+
+            playerAnim.SetBool("idle", false);
+            playerAnim.SetBool("walking", false);
+        }
+
+        if (Mathf.Abs(x) > 0.001)
+        {
+            playerAnim.SetBool("idle", false);
+            playerAnim.SetBool("walking", true);
+        }
+        else
+        {
+            if (isGrounded)
+            {
+                playerAnim.SetBool("idle", true);
+                playerAnim.SetBool("walking", false);
+            }
+        }
+
+      if(x < 0)
+        {
+            playerSpr.flipX = true;
+        } 
+        else if(x > 0)
+        {
+            playerSpr.flipX = false;
+        }
+
+
+       
 
         //adding gravity downwards!
         currentVelocity.y += grav * Time.deltaTime * weight;
@@ -59,6 +108,10 @@ public class playerMove : MonoBehaviour
         }*/
 
         currentVelocity.x *= Mathf.Clamp01(1f - drag * Time.deltaTime);
+
+
+
+        
 
     }
 
