@@ -18,7 +18,12 @@ public class RoomSwitch : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        switchCaseReached = true;
+        if (other.gameObject.tag == "Player")
+        {
+            switchCaseReached = true;
+            print("!!!");
+
+        }
     }
 
     private void Update()
@@ -30,10 +35,8 @@ public class RoomSwitch : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R)) //press r to reset current room
         {
-            //SceneManager.LoadScene(SceneManager.GetActiveScene());
             Scene currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.name);
-            //SceneManager.LoadScene(0);
         }
     }
 
