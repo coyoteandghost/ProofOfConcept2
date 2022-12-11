@@ -8,7 +8,7 @@ public class OneWayPlatform : MonoBehaviour
     public Collider col;
     void Start()
     {
-        
+        player = FindObjectOfType<playerMove>().transform;
     }
 
     void Update()
