@@ -21,6 +21,7 @@ public class RoomSwitch : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             switchCaseReached = true;
+            print("!!!");
 
         }
     }
