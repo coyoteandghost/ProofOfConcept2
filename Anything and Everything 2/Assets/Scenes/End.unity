@@ -350,7 +350,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 19fee8970309dfa418c3e8ef623b97ed, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.373
+  m_Volume: 0.205
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -841,6 +841,7 @@ GameObject:
   - component: {fileID: 2057903415}
   - component: {fileID: 2057903417}
   - component: {fileID: 2057903418}
+  - component: {fileID: 2057903419}
   m_Layer: 0
   m_Name: offfice_bg
   m_TagString: Untagged
@@ -952,6 +953,19 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!114 &2057903419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057903414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1246bc6c0d4a5f44594d6e0be7dcd588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteToScale: {fileID: 2057903414}
 --- !u!1 &2131855715
 GameObject:
   m_ObjectHideFlags: 0
