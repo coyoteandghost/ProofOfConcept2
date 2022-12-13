@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.2396226, b: 0.8645807, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -227,7 +227,6 @@ MonoBehaviour:
   arrow_image: {fileID: 77411670}
   shutterSound: {fileID: 197788241}
   screenFlash: {fileID: 456997683}
-  sceneToLoad: 4
 --- !u!82 &197788241
 AudioSource:
   m_ObjectHideFlags: 0
@@ -710,7 +709,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3fc366e7ef412b24b9daf624bb09511d, type: 2}
+  - {fileID: 2100000, guid: 64108f0912121f84186886b2e93f6b93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -748,8 +747,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461955653}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.0204, y: 1.0765, z: 1.08}
-  m_LocalScale: {x: 7.5, y: 5, z: 3}
+  m_LocalPosition: {x: 0.44, y: 1.1074, z: 1.08}
+  m_LocalScale: {x: 8.27175, y: 4.938, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
