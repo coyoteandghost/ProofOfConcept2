@@ -17,6 +17,14 @@ public class cameraKern : MonoBehaviour
     public ParticleSystem hygieneParticleSystem;
     public ParticleSystem gameParticleSystem;
 
+    [Header("Audio Clips")]
+    public AudioClip foodSound;
+    public AudioClip sleepSound;
+    public AudioClip hygieneSound;
+    public AudioClip gameSound;
+
+    public AudioClip successSound;
+
 
     bool canInteract = false;
     bool buttonsActive;
@@ -49,20 +57,15 @@ public class cameraKern : MonoBehaviour
             StartCoroutine(ButtonCoroutine());
         }
 
-        /*if (food.activeSelf && game.activeSelf && hygiene.activeSelf && sleep.activeSelf)
-        {
-            allStatsActive = true;
-        }*/
-
         if (foodPressed > 3 && sleepPressed > 3 && hygienePressed > 3 && gamePressed > 3)
         {
             allStatsActive = true;
         }
-        Debug.Log(foodPressed);
     }
 
     IEnumerator ButtonCoroutine()
     {
+        AudioSource audio = GetComponent<AudioSource>();
         buttonsActive = false;
         yield return new WaitForSeconds(1);
         buttonsActive = true;
@@ -71,17 +74,29 @@ public class cameraKern : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W)) //FOOD
             {
                 foodParticleSystem.Play();
+
+                audio.clip = foodSound;
+                audio.Play();
+
                 foodPressed += 1;
             }
             if (Input.GetKeyDown(KeyCode.A))//GAME
             {
                 gameParticleSystem.Play();
+
+                audio.clip = gameSound;
+                audio.Play();
+
                 gamePressed += 1;
             }
             if (Input.GetKeyDown(KeyCode.S))//HYGIENE
             {
                 //hygiene.SetActive(true);
                 hygieneParticleSystem.Play();
+
+                audio.clip = hygieneSound;
+                audio.Play();
+
                 hygienePressed += 1;
 
             }
@@ -89,17 +104,23 @@ public class cameraKern : MonoBehaviour
             {
                 //sleep.SetActive(true);
                 sleepParticleSystem.Play();
+
+                audio.clip = sleepSound;
+                audio.Play();
+
                 sleepPressed += 1;
             }
         }
         if (allStatsActive)
         {
+            audio.clip = successSound;
+            audio.Play();
             StartCoroutine(SceneEndCoroutine());
         }
     }
     IEnumerator SceneEndCoroutine() //ENDS THE SCENE IF ALL STATS ARE ACTIVE AND GOES TO NEXT ROOM
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         int sceneToLoad = SceneManager.GetActiveScene().buildIndex + 1; //move to next scene
 
         if (sceneToLoad > SceneManager.sceneCountInBuildSettings - 1) //if you hit the last scene, go to title screen
