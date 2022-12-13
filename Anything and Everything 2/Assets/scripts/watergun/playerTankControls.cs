@@ -23,7 +23,8 @@ public class playerTankControls : MonoBehaviour
 
         if(ratAttack > 3)
         {
-            GetComponent<RoomSwitch>().switchCaseReached = true;
+            StartCoroutine(roomSwitchTimer());
+            //GetComponent<RoomSwitch>().switchCaseReached = true;
         }
 
         float xInput = Input.GetAxis("Horizontal");
@@ -54,6 +55,12 @@ public class playerTankControls : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.5f);
         shot = false;
+    }
+
+    private IEnumerator roomSwitchTimer()
+    {
+        yield return new WaitForSeconds(2);
+        GetComponent<RoomSwitch>().switchCaseReached = true;
     }
 
 }
