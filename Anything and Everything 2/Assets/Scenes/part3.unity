@@ -349,7 +349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3453594295488315971, guid: 7c7229dc3f3d31142ad44d6c58bbe000, type: 3}
       propertyPath: drag
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3453594295488315971, guid: 7c7229dc3f3d31142ad44d6c58bbe000, type: 3}
       propertyPath: bounceMask.m_Bits
@@ -6568,12 +6568,16 @@ PrefabInstance:
       value: 1.9999989
       objectReference: {fileID: 0}
     - target: {fileID: 7182543842039925576, guid: 9ee7fac65ca655746b2f05600f776c14, type: 3}
+      propertyPath: m_Size.z
+      value: 8.894413
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182543842039925576, guid: 9ee7fac65ca655746b2f05600f776c14, type: 3}
       propertyPath: m_Center.x
       value: -0.015066476
       objectReference: {fileID: 0}
     - target: {fileID: 7182543842039925576, guid: 9ee7fac65ca655746b2f05600f776c14, type: 3}
       propertyPath: m_Center.z
-      value: -1.5374511
+      value: -1.2029375
       objectReference: {fileID: 0}
     - target: {fileID: 7182543842039925579, guid: 9ee7fac65ca655746b2f05600f776c14, type: 3}
       propertyPath: m_RootOrder

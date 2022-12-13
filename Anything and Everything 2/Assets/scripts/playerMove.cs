@@ -106,7 +106,7 @@ public class playerMove : MonoBehaviour
             currentVelocity.y = -currentVelocity.y;
         }*/
 
-        currentVelocity.x *= Mathf.Clamp01((1.0f - drag) * Time.deltaTime); //TEEHEE
+        currentVelocity.x *= Mathf.Clamp01(1 - drag * Time.deltaTime);
 
 
 
