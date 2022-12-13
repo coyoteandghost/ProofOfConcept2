@@ -45,7 +45,6 @@ public class playerMove : MonoBehaviour
 
 
         Vector3 move = transform.right * x + transform.forward * 0; //controlling the movement in the forward and side to side
-        //controllerP.Move(move * speed * Time.deltaTime); //take the movement formula and apply it to character with respect to time and speed
 
 
         if(Input.GetButtonDown("Jump") && isGrounded)
@@ -107,12 +106,19 @@ public class playerMove : MonoBehaviour
             currentVelocity.y = -currentVelocity.y;
         }*/
 
-        currentVelocity.x *= Mathf.Clamp01(1f - drag * Time.deltaTime);
+        currentVelocity.x *= Mathf.Clamp01((1.0f - drag) * Time.deltaTime); //TEEHEE
 
 
 
         
 
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bounce")
+        {
+            Debug.Log("colliding wiht bounce tag");
+        }
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)

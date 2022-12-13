@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.28789738, g: 0.31219065, b: 0.2699906, a: 1}
+  m_IndirectSpecularColor: {r: 0.28789645, g: 0.3121893, b: 0.26998937, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -277,6 +277,10 @@ PrefabInstance:
     - target: {fileID: 3453594295488315970, guid: 7c7229dc3f3d31142ad44d6c58bbe000, type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453594295488315971, guid: 7c7229dc3f3d31142ad44d6c58bbe000, type: 3}
+      propertyPath: drag
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3453594295488315971, guid: 7c7229dc3f3d31142ad44d6c58bbe000, type: 3}
       propertyPath: bounceMask.m_Bits
@@ -2164,8 +2168,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1282145236}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.0935, y: 27.84, z: -27.48}
-  m_LocalScale: {x: 39.557777, y: 0.28755552, z: 62.44263}
+  m_LocalPosition: {x: 8.9292, y: 27.84, z: -27.48}
+  m_LocalScale: {x: 37.227825, y: 0.28755552, z: 62.44263}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2090194016}
@@ -2311,7 +2315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7720748968624968919, guid: 064a49583b1e8fc4685b038f9cd286c9, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 064a49583b1e8fc4685b038f9cd286c9, type: 3}
@@ -3142,7 +3146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7720748968624968919, guid: 064a49583b1e8fc4685b038f9cd286c9, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 064a49583b1e8fc4685b038f9cd286c9, type: 3}
@@ -3586,7 +3590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7720748968624968919, guid: 064a49583b1e8fc4685b038f9cd286c9, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 064a49583b1e8fc4685b038f9cd286c9, type: 3}
