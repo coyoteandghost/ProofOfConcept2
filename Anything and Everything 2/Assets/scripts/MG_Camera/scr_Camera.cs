@@ -7,9 +7,8 @@ using UnityEngine.UI;
 
 public class scr_Camera : MonoBehaviour
 {
-    //[SerializeField]
     public float turnSpeed;
-    //[SerializeField]
+
     public Transform this_obj;
 
     public GameObject photo;
@@ -22,7 +21,7 @@ public class scr_Camera : MonoBehaviour
 
     bool picTaken = false;
 
-    public int sceneToLoad = 0;
+    //public int sceneToLoad = 0;
 
     void Start()
     {
@@ -61,6 +60,12 @@ public class scr_Camera : MonoBehaviour
     IEnumerator NextScene()
     {
         yield return new WaitForSeconds(4);
+        int sceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
+
+        if (sceneToLoad > SceneManager.sceneCountInBuildSettings - 1)
+        {
+            sceneToLoad = 0;
+        }
         SceneManager.LoadScene(sceneToLoad);
     }
 }
