@@ -9,7 +9,7 @@ public class Blender : MonoBehaviour
     public float fruitLeft;
     public ParticleSystem fruitSplat;
     [SerializeField]
-    int sceneToLoad;
+    //int sceneToLoad;
     private void Start()
     {
         
@@ -19,6 +19,7 @@ public class Blender : MonoBehaviour
     {
        if(fruitLeft <= 0)
         {
+
             StartCoroutine(NextScene());
         }
     }
@@ -33,7 +34,13 @@ public class Blender : MonoBehaviour
     }
     IEnumerator NextScene()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
+        int sceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
+        if (sceneToLoad > SceneManager.sceneCountInBuildSettings - 1)
+        {
+            sceneToLoad = 0;
+        }
+
         SceneManager.LoadScene(sceneToLoad);
     }
 }
